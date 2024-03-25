@@ -6,31 +6,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
 
 const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 	const [currentButton, setCurrentButton] = useState<string | null>(buttons[0]); // Set the first button as initially highlighted
 	const buttonRefs = React.useRef<{ [key: string]: HTMLElement | null }>({});
-	const [isDesktop, setDesktop] = useState(false);
-	const [isRadialNavbarOpen, setRadialNavbarOpen] = useState(false);
-
-	const updateMedia = () => {
-		setDesktop(window.innerWidth > 1400);
-	};
-
-	const openRadialNavbar = () => {
-		setRadialNavbarOpen(!isRadialNavbarOpen);
-	};
-
-	useEffect(() => {
-		window.addEventListener("resize", updateMedia);
-		return () => window.removeEventListener("resize", updateMedia);
-	});
-
-	useEffect(() => {
-		updateMedia();
-	});
 
 	useEffect(() => {
 		// Access DOM elements after they have been rendered
@@ -87,56 +66,26 @@ const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 	return (
 		<>
 			<section className="top-0 left-0 w-full z-50">
-				{isDesktop && (
-					<nav className="justify-center flex font-normal text-[20px]">
-						{buttons.map((button) => {
-							return (
-								<Link href={`#${button.toLowerCase()}`} key={button}>
-									<section
-										className={`px-16 py-5 
+				<nav className="justify-center flex font-normal text-[20px]">
+					{buttons.map((button) => {
+						return (
+							<Link href={`#${button.toLowerCase()}`} key={button}>
+								<section
+									className={`px-16 py-5 
 									`}
-										id={button}
-										ref={(el) => (buttonRefs.current[button] = el)}
-									>
-										{button}
-									</section>
-								</Link>
-							);
-						})}
-					</nav>
-				)}
-				{!isDesktop && (<>
-					<nav className="relative flex justify-end visible lg:hidden z-50">
-						<button className="flex items-center px-4 py-2 rounded-md ">
-							<Image
-								src="/three_bars.svg"
-								alt="Logo"
-								width={24}
-								height={24}
-								onClick={openRadialNavbar}
-							/>
-						</button>
-					</nav>
-					<section className="h-0.5 bg-gradient-to-r from-custom_red to-custom_lightblue" /></>
-				)}
+									id={button}
+									ref={(el) => (buttonRefs.current[button] = el)}
+								>
+									{button}
+								</section>
+							</Link>
+						);
+					})}
+				</nav>
+				<section className="h-0.5 bg-gradient-to-r from-custom_red to-custom_lightblue" />
 			</section>
-			
-			{isRadialNavbarOpen && (
-				<motion.div
-					initial={{ opacity: 0, scale: 0.8 }}
-					animate={{ opacity: 1, scale: 1.3 }}
-					transition={{
-						duration: 0.3,
-						delay: 0.1,
-						ease: "easeInOut",
-					}}
-					className="w-screen h-screen bg-gradient-to-r from-[#ffff] to-custom_lightblue opacity-25"
-					
-				>
-					
-				</motion.div>
-			)}
 		</>
 	);
 };
+
 export default Navbar;
