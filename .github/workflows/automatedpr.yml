@@ -22,4 +22,5 @@ jobs:
         git config pull.rebase false
         git remote add hackhub-24-testdeploy https://github.com/sam-shervin/hackhub-24-testdeploy
         git pull hackhub-24-testdeploy master --allow-unrelated-histories
+        git merge hackhub-24-testdeploy/master --allow-unrelated-histories -Xtheirs
         git push hackhub-24-testdeploy sam-patch:master --force
