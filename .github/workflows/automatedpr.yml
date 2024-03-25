@@ -18,6 +18,7 @@ jobs:
         git config --global user.email "samshervin.sebastian@gmail.com"
         git config --global user.name "sam-shervin"
         git checkout sam-patch
+        git pull
         git config pull.rebase false
         git remote add hackhub-24-testdeploy https://github.com/sam-shervin/hackhub-24-testdeploy
         git pull hackhub-24-testdeploy master --allow-unrelated-histories
