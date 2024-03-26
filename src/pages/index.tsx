@@ -241,7 +241,7 @@ export default function Home() {
 						className="absolute right-[4rem] top-[-4rem] z-0"
 					></motion.img>
 
-					<p className="text-custom_lightblue hack-shadow z-10">Hack</p>
+					<p className="text-custom_lightblue hack-shadow z-10 ">Hack</p>
 					<p className="text-custom_red hub-shadow z-10">Hub</p>
 
 					<p className="text-white text-8xl md:text-6xl sm:text-4xl relative top-28 -left-16 my-2 z-20">

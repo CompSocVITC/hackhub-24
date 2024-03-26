@@ -7,7 +7,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 	const [currentButton, setCurrentButton] = useState<string | null>(buttons[0]); // Set the first button as initially highlighted
@@ -47,6 +47,8 @@ const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 							btnRef.style.cssText = ""; // Reset button color
 						}
 					});
+					{
+					}
 
 					// Set the color of the clicked button
 					buttonDom.style.cssText = `
@@ -120,38 +122,40 @@ const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 					</>
 				)}
 			</section>
-
-			{isRadialNavbarOpen && (
-				<section className="fixed flex flex-col items-center justify-center h-screen w-screen z-40 bg-transparent top-[-5px]">
-					<motion.section
-						initial={{ opacity: 0 }}
-						animate={{
-							opacity: 1,
-						}}
-						transition={{
-							duration: 0.2,
-							delay: 0,
-							ease: "easeInOut",
-						}}
-						className="backdrop-blur-xl shadow-slate-600 border border-custom_red shadow-2xl flex flex-col items-center justify-center rounded-2xl py-4 px-8 min-w-screen"
-					>
-						{buttons.map((button) => {
-							return (
-								<Link href={`#${button.toLowerCase()}`} key={button}>
-									<section
-										onClick={openRadialNavbar}
-										className={`px-16 py-6 
+			<AnimatePresence>
+				{isRadialNavbarOpen && (
+					<section className="fixed flex flex-col items-center justify-center h-screen w-screen z-40 bg-transparent top-[-5px]">
+						<motion.section
+							initial={{ opacity: 0 }}
+							animate={{
+								opacity: 1,
+							}}
+							transition={{
+								duration: 0.3,
+								delay: 0,
+								ease: "easeInOut",
+							}}
+							exit={{ opacity: 0 }}
+							className="backdrop-blur-xl shadow-slate-600 border border-custom_red shadow-2xl flex flex-col items-center justify-center rounded-2xl py-4 px-8 min-w-screen"
+						>
+							{buttons.map((button) => {
+								return (
+									<Link href={`#${button.toLowerCase()}`} key={button}>
+										<section
+											onClick={openRadialNavbar}
+											className={`px-16 py-6 hover:bg-black hover:bg-opacity-10 rounded-md 
 									`}
-										id={button}
-									>
-										{button}
-									</section>
-								</Link>
-							);
-						})}
-					</motion.section>
-				</section>
-			)}
+											id={button}
+										>
+											{button}
+										</section>
+									</Link>
+								);
+							})}
+						</motion.section>
+					</section>
+				)}
+			</AnimatePresence>
 			<section className="h-0.5 bg-gradient-to-r from-custom_red to-custom_lightblue" />
 		</>
 	);
