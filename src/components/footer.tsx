@@ -17,15 +17,13 @@ const Footer = () => {
 				className="h-0.5 bg-gradient-to-r from-[#CF1259] to-[#7161EF] my-4 "
 			/>
 			<footer className="font-montserrat">
-				<div className="pb-6 text-gray-800 flex flex-wrap lg:flex-nowrap justify-left text-left items-center">
-					<div className="pt-8 lg:pt-4 w-11/12 sm:w-2/3 lg:w-[30rem] order-4 lg:order-1">
-						<img
-							src={comsocLogowhite.src}
-							alt="IEEE CS VITC Logo"
-							className="items-center justify-center"
-						/>
+				<div className="pb-12 text-gray-800 flex flex-wrap lg:flex-nowrap items-center">
+					<div className="p-12 mr-[-70px] order-4 lg:order-1  sm:w-screen md:flex-col md:w-screen md:flex sm:flex sm:flex-col">
+						<a href="https://ieeecsvitc.com" className="md:self-center">
+							<img src={comsocLogowhite.src} alt="IEEE CS VITC Logo" />
+						</a>
 					</div>
-					<div className="mt-3 w-full lg:w-3/12 py-6 lg:py-0 hidden lg:block order-1 lg:order-2">
+					<div className="mt-3 w-full lg:w-2/12 py-6 lg:py-0 hidden lg:block order-1 lg:order-2">
 						<div className="text-lg lg:text-base text-white inline-block mb-3">
 							Menu
 							<div id="underlineGradient" />
@@ -67,8 +65,8 @@ const Footer = () => {
 							FAQs
 						</a>
 					</div>
-					<div className="mt-3 w-full lg:w-3/12 order-2 lg:order-3">
-						<div className="text-lg lg:text-base text-white inline-block mb-3">
+					<div className="mt-3 sm:w-screen md:flex-col md:w-screen md:flex sm:flex sm:flex-col w-full lg:w-3/12 order-2 lg:order-3">
+						<div className="text-lg sm:self-center md:self-center lg:text-base text-white inline-block mb-3">
 							Address
 							<div id="underlineGradient" />
 						</div>
@@ -76,13 +74,15 @@ const Footer = () => {
 							href="https://goo.gl/maps/C9UE9JLWnBAfQPKe7"
 							target="_blank"
 							rel="noreferrer"
-							className="my-3 block text-white hover:text-gray-200 text-base lg:text-sm lg:pr-16"
+							className="my-3 block text-white hover:text-gray-200 text-base lg:text-sm lg:pr-16 md:self-center sm:self-center"
 						>
-							Kelambakkam - Vandalur Rd, Rajan Nagar, Chennai, Tamil Nadu -
-							600127
+							<section>Kelambakkam - Vandalur Rd,</section>
+							<section>Rajan Nagar, Chennai,</section>
+							<section></section>
+							<section>Tamil Nadu - 600127.</section>
 						</a>
 						<br />
-						<div className="text-lg lg:text-base text-white inline-block mb-3">
+						<div className="text-lg sm:self-center md:self-center lg:text-base text-white inline-block mb-3">
 							Email
 							<div id="underlineGradient" />
 						</div>
@@ -90,13 +90,13 @@ const Footer = () => {
 							href="mailto:ieeecomputersociety@vit.ac.in"
 							target="_blank"
 							rel="noreferrer"
-							className="my-3 block text-white hover:text-gray-200 text-base lg:text-sm"
+							className="my-3 block text-white hover:text-gray-200 text-base lg:text-sm md:text-center sm:text-center"
 						>
 							ieeecomputersociety@vit.ac.in
 						</a>
 					</div>
-					<div className="mt-3 w-full lg:w-3/12 order-3 lg:order-4">
-						<div className="text-lg lg:text-base text-white inline-block lg:my-0 lg:pb-4 pl-6 lg:pl-0">
+					<div className="mt-3 w-full sm:w-screen sm:flex md:flex-col md:w-screen md:flex sm:flex-col lg:w-3/12 order-3 lg:order-4">
+						<div className="text-lg lg:text-base text-white inline-block mb-3 md:self-center sm:self-center">
 							Social Media
 							<div id="underlineGradient" />
 						</div>

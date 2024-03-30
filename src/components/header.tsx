@@ -1,9 +1,3 @@
-// CHAT GPT CODE
-// I dont know what this does
-// how this does it
-// why this does it
-// react bad, svelte W
-
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,22 +9,9 @@ const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 	const [isDesktop, setDesktop] = useState(false);
 	const [isRadialNavbarOpen, setRadialNavbarOpen] = useState(false);
 
-	const updateMedia = () => {
-		setDesktop(window.innerWidth > 1400);
-	};
-
 	const openRadialNavbar = () => {
 		setRadialNavbarOpen(!isRadialNavbarOpen);
 	};
-
-	useEffect(() => {
-		window.addEventListener("resize", updateMedia);
-		return () => window.removeEventListener("resize", updateMedia);
-	});
-
-	useEffect(() => {
-		updateMedia();
-	});
 
 	useEffect(() => {
 		// Access DOM elements after they have been rendered
@@ -88,14 +69,56 @@ const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 
 	return (
 		<>
-			<section className="top-0 left-0 w-full z-50">
-				{isDesktop && (
-					<nav className="justify-center flex font-normal text-[20px]">
+			<section className="">
+				<nav className="absolute right-0 lg:hidden ">
+					<button className="flex items-center px-4 py-2 rounded-md ">
+						<img
+							src="/three_bars.svg"
+							alt="Logo"
+							width={50}
+							height={50}
+							onClick={openRadialNavbar}
+							className="z-[100]"
+						/>
+					</button>
+				</nav>
+				<nav className="sm:hidden md:hidden justify-center flex flex-nowrap font-normal text-[20px] w-screen">
+					{buttons.map((button) => {
+						return (
+							<Link href={`#${button.toLowerCase()}`} key={button}>
+								<section
+									className={`px-16 py-5 
+									`}
+									id={button}
+								>
+									{button}
+								</section>
+							</Link>
+						);
+					})}
+				</nav>
+			</section>
+			{isRadialNavbarOpen && (
+				<section className="fixed flex flex-col items-center justify-center h-screen w-screen z-40 bg-transparent top-[-5px]">
+					<motion.section
+						initial={{ opacity: 0 }}
+						animate={{
+							opacity: 1,
+						}}
+						transition={{
+							duration: 0.3,
+							delay: 0,
+							ease: "easeInOut",
+						}}
+						exit={{ opacity: 0 }}
+						className="backdrop-blur-xl shadow-slate-600 border border-custom_red shadow-2xl flex flex-col items-center justify-center rounded-2xl py-4 px-8 min-w-screen"
+					>
 						{buttons.map((button) => {
 							return (
 								<Link href={`#${button.toLowerCase()}`} key={button}>
 									<section
-										className={`px-16 py-5 
+										onClick={openRadialNavbar}
+										className={`px-16 py-6 hover:bg-black hover:bg-opacity-10 rounded-md 
 									`}
 										id={button}
 									>
@@ -104,59 +127,10 @@ const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 								</Link>
 							);
 						})}
-					</nav>
-				)}
-				{!isDesktop && (
-					<>
-						<nav className="relative flex justify-end visible lg:hidden z-[100]">
-							<button className="flex items-center px-4 py-2 rounded-md ">
-								<Image
-									src="/three_bars.svg"
-									alt="Logo"
-									width={24}
-									height={24}
-									onClick={openRadialNavbar}
-								/>
-							</button>
-						</nav>
-					</>
-				)}
-			</section>
-			<AnimatePresence>
-				{isRadialNavbarOpen && (
-					<section className="fixed flex flex-col items-center justify-center h-screen w-screen z-40 bg-transparent top-[-5px]">
-						<motion.section
-							initial={{ opacity: 0 }}
-							animate={{
-								opacity: 1,
-							}}
-							transition={{
-								duration: 0.3,
-								delay: 0,
-								ease: "easeInOut",
-							}}
-							exit={{ opacity: 0 }}
-							className="backdrop-blur-xl shadow-slate-600 border border-custom_red shadow-2xl flex flex-col items-center justify-center rounded-2xl py-4 px-8 min-w-screen"
-						>
-							{buttons.map((button) => {
-								return (
-									<Link href={`#${button.toLowerCase()}`} key={button}>
-										<section
-											onClick={openRadialNavbar}
-											className={`px-16 py-6 hover:bg-black hover:bg-opacity-10 rounded-md 
-									`}
-											id={button}
-										>
-											{button}
-										</section>
-									</Link>
-								);
-							})}
-						</motion.section>
-					</section>
-				)}
-			</AnimatePresence>
-			<section className="h-0.5 bg-gradient-to-r from-custom_red to-custom_lightblue" />
+					</motion.section>
+				</section>
+			)}
+			<section className="lg:h-0.5 bg-gradient-to-r from-custom_red to-custom_lightblue" />
 		</>
 	);
 };
