@@ -17,7 +17,7 @@ export default function About(): JSX.Element {
 		<>
 			<div className="lg:w-[70%] sm:w-[95%] md:w-[90%] lg:ml-24 pb-24 p-12 z-10 backdrop-blur-lg rounded-[3rem] border border-custom_red shadow-2xl shadow-custom_darkblue md:self-center sm:self-center">
 				<section
-					className={`flex py-4 ${spaceGrotesk.className} md:text-[70%] sm:text-[50%] sm:justify-center`}
+					className={`flex py-4 ${spaceGrotesk.className} md:text-[70%] sm:text-[40%] sm:justify-center`}
 				>
 					<section className="text-custom_white font-glitch about-shadow mr-8">
 						About
@@ -31,7 +31,7 @@ export default function About(): JSX.Element {
 				</section>
 
 				<section
-					className={`text-[1.5rem] font-normal self-start sm:text-center sm:text-[1rem]`}
+					className={`text-[1.5rem] font-normal self-start sm:text-center sm:text-[20%]`}
 				>
 					Welcome to IEEE Computer Society VIT Chennai, where innovation meets
 					impact. This event is a vibrant arena for budding technologists,

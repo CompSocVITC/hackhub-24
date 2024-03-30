@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 	const [currentButton, setCurrentButton] = useState<string | null>(buttons[0]); // Set the first button as initially highlighted
 	const buttonRefs = React.useRef<{ [key: string]: HTMLElement | null }>({});
-	const [isDesktop, setDesktop] = useState(false);
 	const [isRadialNavbarOpen, setRadialNavbarOpen] = useState(false);
 
 	const openRadialNavbar = () => {
@@ -85,7 +82,7 @@ const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 				<nav className="sm:hidden md:hidden justify-center flex flex-nowrap font-normal text-[20px] w-screen">
 					{buttons.map((button) => {
 						return (
-							<Link href={`#${button.toLowerCase()}`} key={button}>
+							<a href={`#${button.toLowerCase()}`} key={button}>
 								<section
 									className={`px-16 py-5 
 									`}
@@ -93,7 +90,7 @@ const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 								>
 									{button}
 								</section>
-							</Link>
+							</a>
 						);
 					})}
 				</nav>
@@ -115,7 +112,7 @@ const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 					>
 						{buttons.map((button) => {
 							return (
-								<Link href={`#${button.toLowerCase()}`} key={button}>
+								<a href={`#${button.toLowerCase()}`} key={button}>
 									<section
 										onClick={openRadialNavbar}
 										className={`px-16 py-6 hover:bg-black hover:bg-opacity-10 rounded-md 
@@ -124,7 +121,7 @@ const Navbar = ({ buttons }: { buttons: string[] }): JSX.Element => {
 									>
 										{button}
 									</section>
-								</Link>
+								</a>
 							);
 						})}
 					</motion.section>

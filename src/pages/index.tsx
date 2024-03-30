@@ -146,7 +146,7 @@ export default function Home() {
 							delay: 2,
 							ease: "easeInOut",
 						}}
-						className={`${roboto.className} absolute left-[6rem] top-[-19rem] text-[20rem] z-1 gradient-border`}
+						className={`${roboto.className} sm:hidden absolute left-[6rem] top-[-19rem] text-[20rem] z-1 gradient-border`}
 					>
 						×
 					</motion.p>

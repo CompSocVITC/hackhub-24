@@ -50,7 +50,7 @@ export default function Timeline(): JSX.Element {
 
 				<div className="p-4 flex w-screen flex-col items-center justify-center z-10">
 					<section className={`flex py-4 ${spaceGrotesk.className}`}>
-						<section className="text-custom_white text-start w-screen ml-[3em]">
+						<section className="text-custom_white text-start w-screen ml-[3em] sm:text-center sm:ml-0">
 							Timeline
 						</section>
 					</section>
@@ -59,24 +59,26 @@ export default function Timeline(): JSX.Element {
 					>
 						<section className="">
 							{times.map((time, index) => (
-								<section className={`justify-center w-screen rounded-lg p-12`}>
+								<section
+									className={`justify-center w-screen rounded-lg p-12 sm:p-0`}
+								>
 									<section
 										className={`${
 											index % 2 == 0
-												? "ml-[25em] mr-[4em] border-custom_red"
-												: "ml-[4em] mr-[25em] border-custom_lightblue"
-										} border rounded-lg p-12 backdrop-brightness-125 backdrop-blur-lg shadow-2xl shadow-custom_darkblue`}
+												? "ml-[25em] mr-[4em] sm:ml-[1em] sm:mr-[1em] border-custom_red"
+												: "ml-[4em] mr-[25em] sm:ml-[1em] sm:mr-[1em] border-custom_lightblue"
+										} border rounded-lg p-12 backdrop-brightness-125 sm:m-6 backdrop-blur-lg shadow-2xl shadow-custom_darkblue`}
 									>
 										<section
 											className={`${
 												index % 2 == 0
 													? "text-custom_red"
 													: "text-custom_lightblue"
-											} text-[3rem] font-normal self-start"`}
+											} text-[3rem] sm:text-[130%] font-normal self-start"`}
 										>
 											{time.topic}
 										</section>
-										<section className="text-[1.5rem] font-normal mt-12 text-end">
+										<section className="sm:text-[90%] font-normal sm:mt-6 mt-12 text-end">
 											{time.description}
 										</section>
 									</section>

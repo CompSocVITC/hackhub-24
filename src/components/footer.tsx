@@ -11,7 +11,7 @@ import devto from "../assets/socialmedia/devto.png";
 
 const Footer = () => {
 	return (
-		<div className="relative z-0 mx-32 backdrop-blur-md">
+		<div className="relative z-0 lg:mx-32 md:mx-32 sm:mx-12 backdrop-blur-md">
 			<section
 				id="contact"
 				className="h-0.5 bg-gradient-to-r from-[#CF1259] to-[#7161EF] my-4 "

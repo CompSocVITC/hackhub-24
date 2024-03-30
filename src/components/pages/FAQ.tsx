@@ -56,15 +56,14 @@ export default function FAQ(): JSX.Element {
 		<>
 			<motion.section
 				id="faqs"
-				className="relative mt-10 w-full flex py-20 font-bold text-[5rem] min-h-screen"
+				className="relative mt-10 w-full flex py-20 font-bold text-[5rem] sm:text-[80%] min-h-screen sm:justify-center"
 			>
-				<div className="w-[80%] ml-24 p-4 z-10">
+				<div className="w-[80%] ml-24 sm:ml-0 z-10 sm:text-center">
 					<section className={`${spaceGrotesk.className} font-regular`}>
 						FAQs
 					</section>
 					<section className={`${spaceGrotesk.className} ml-[-1rem]`}>
 						{faqs.map((faq, index) => (
-
 							<motion.section
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
@@ -77,7 +76,7 @@ export default function FAQ(): JSX.Element {
 								key={index}
 							>
 								<section
-									className="text-[2.1rem] font-normal flex justify-between"
+									className="text-[2.1rem] sm:text-[40%] font-normal flex justify-between"
 									onClick={() => toggleTopic(index)}
 								>
 									<section>{faq.topic}</section>
@@ -87,7 +86,6 @@ export default function FAQ(): JSX.Element {
 									/>
 								</section>
 								{selectedTopic === index && (
-
 									<motion.section
 										initial={{ opacity: 0 }}
 										animate={{
@@ -98,7 +96,7 @@ export default function FAQ(): JSX.Element {
 											delay: 0,
 											ease: "easeInOut",
 										}}
-										className={` font-extralight text-[1.2rem] pt-4 pb-24 pr-24 `}
+										className={` font-extralight text-[1.2rem] sm:text-[25%] pt-4 pb-24 sm:pr-0`}
 									>
 										<p>{faq.description}</p>
 									</motion.section>

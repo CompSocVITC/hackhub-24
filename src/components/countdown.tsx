@@ -64,27 +64,27 @@ export default function Countdown({
 			<section className="font-offbittrialbold">
 				<section className="flex justify-center sm:text-[2em] text-7xl gap-16 sm:gap-6 mt-20 ">
 					<div className="flex flex-col items-center">
-						<p className="text-9xl sm:text-[2em]">{timeLeft.days}</p>
-						<p className="text-custom_red font-offbittrial sm:text-[1em] text-6xl">
+						<p className="text-9xl sm:text-[120%]">{timeLeft.days}</p>
+						<p className="text-custom_red font-offbittrial sm:text-[80%] text-6xl">
 							days
 						</p>
 					</div>
 
 					<div className="flex flex-col items-center">
-						<p className="text-9xl sm:text-[2em]">{timeLeft.hours}</p>
-						<p className="text-custom_lightblue font-offbittrial sm:text-[1em] text-6xl">
+						<p className="text-9xl sm:text-[120%]">{timeLeft.hours}</p>
+						<p className="text-custom_lightblue font-offbittrial sm:text-[80%] text-6xl">
 							hours
 						</p>
 					</div>
 					<div className="flex flex-col items-center">
-						<p className="text-9xl sm:text-[2em]">{timeLeft.minutes}</p>
-						<p className="text-custom_white font-offbittrial sm:text-[1em] text-6xl">
+						<p className="text-9xl sm:text-[120%]">{timeLeft.minutes}</p>
+						<p className="text-custom_white font-offbittrial sm:text-[80%] text-6xl">
 							minutes
 						</p>
 					</div>
 					<div className="flex flex-col items-center">
-						<p className="text-9xl sm:text-[2em]">{timeLeft.seconds}</p>
-						<p className="text-custom_red font-offbittrial text-6xl sm:text-[1em]">
+						<p className="text-9xl sm:text-[120%]">{timeLeft.seconds}</p>
+						<p className="text-custom_red font-offbittrial text-6xl sm:text-[80%]">
 							seconds
 						</p>
 					</div>
