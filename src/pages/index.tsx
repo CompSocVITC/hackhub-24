@@ -58,11 +58,25 @@ export default function Home() {
 
 	return (
 		<>
-			{/* HOME PAGE */}
-
+			<motion.p
+				initial={{ rotate: 0, opacity: 0, scale: 0.2 }}
+				animate={{
+					opacity: 1,
+					scale: 1,
+					// Adding rotation animation
+				}}
+				transition={{
+					duration: 3,
+					delay: 2,
+					ease: "easeInOut",
+				}}
+				className={` absolute sm:left-[70%] sm:top-[48%] md:left-[80%] md:top-[32%] left-[80%] top-[40%] text-[4rem]  sm:text-[3rem] z-1 font-glitch z-20`}
+			>
+				24
+			</motion.p>
 			<motion.section
 				id="home"
-				className="min-h-screen w-full flex flex-col items-center justify-center bg-[#03091E] overflow-x-hidden scroll-smooth"
+				className="min-h-screen w-screen flex flex-col items-center justify-center bg-[#03091E] overflow-x-hidden scroll-smooth"
 				initial="initial"
 				animate="animate"
 				variants={loadingAnimation}
@@ -71,7 +85,7 @@ export default function Home() {
 					initial={{ opacity: 0, y: "0vh", rotate: 90 }}
 					animate={{
 						opacity: [1, 0.7, 0.3, 0.5, 0, 0.5, 0.3, 0.7, 1],
-						y: ["-100vh", "500vh"],
+						y: ["-20vh", "500vh"],
 					}} // Animate opacity from 1 to 0
 					transition={{
 						duration: 0.2,
@@ -85,7 +99,7 @@ export default function Home() {
 						},
 					}}
 					src="/right_arrow_white.svg"
-					className="absolute left-[1rem] bottom-[-10rem] z-0 rotate-90"
+					className="sm:hidden absolute left-[1rem] bottom-[-10rem] z-0 rotate-90"
 				/>
 				<motion.section
 					initial={{ opacity: 0, scale: 0.2 }}
@@ -202,7 +216,7 @@ export default function Home() {
 								repeat: Infinity, // Changed ease for smoother motion
 							},
 						}}
-						className="font-opensans font-black absolute text-[4rem]  w-fit p-4 top-[-5rem] right-[50rem] white-border text-custom_red"
+						className="font-opensans font-black absolute text-[4rem] p-4 top-[-5rem] right-[50rem] text-custom_red"
 					>
 						◯
 					</motion.p>
@@ -220,7 +234,7 @@ export default function Home() {
 								repeat: Infinity, // Changed ease for smoother motion
 							},
 						}}
-						className="font-opensans font-black absolute text-[12rem] right-0 w-fit p-4 top-[10rem] white-border text-custom_red"
+						className="font-opensans sm:hidden font-black absolute text-[12rem] right-0 w-fit p-4 top-[10rem] white-border text-custom_red"
 					>
 						◯
 					</motion.p>
@@ -230,7 +244,7 @@ export default function Home() {
 						animate={{ opacity: [1, 0.7, 0.3, 0.5, 0, 0.5, 0.3, 0.7, 1] }} // Animate opacity from 1 to 0
 						transition={{ duration: 1, repeat: Infinity, yoyo: Infinity }} // Set transition duration and repeat infinitely
 						src="/dots_purple.svg"
-						className="absolute right-[7rem] top-[-2rem] z-0"
+						className="absolute right-[7rem] top-[-2rem] z-0 sm:hidden"
 					></motion.img>
 
 					<motion.img
@@ -238,15 +252,14 @@ export default function Home() {
 						animate={{ opacity: [1, 0.7, 0.3, 0.5, 0, 0.5, 0.3, 0.7, 1] }} // Animate opacity from 1 to 0
 						transition={{ duration: 0.8, repeat: Infinity, yoyo: Infinity }} // Set transition duration and repeat infinitely
 						src="/dots_white.svg"
-						className="absolute right-[4rem] top-[-4rem] z-0"
+						className="absolute right-[4rem] top-[-4rem] z-0 sm:hidden "
 					></motion.img>
-
-					<p className="text-custom_lightblue hack-shadow z-10">Hack</p>
-					<p className="text-custom_red hub-shadow z-10">Hub</p>
-
-					<p className="text-white text-8xl md:text-6xl sm:text-4xl relative top-28 -left-16 my-2 z-20">
-						24
-					</p>
+					<section className="flex sm:flex-col md:text-[8rem] sm:text-[6rem] sm:my-[4rem] sm:text-center sm:justify-center">
+						<section className="text-custom_lightblue hack-shadow z-10">
+							Hack
+						</section>
+						<section className="text-custom_red hub-shadow z-10 ">Hub</section>
+					</section>
 				</motion.section>
 				<motion.section
 					initial={{ opacity: 0, scale: 0.2 }}
@@ -256,7 +269,7 @@ export default function Home() {
 						delay: 0.3,
 						ease: "easeInOut",
 					}}
-					className="font-offbittrialbold mt-[-30px] text-[30px] mr-24 sm:text-6xl md:text-8xl flex gap-4"
+					className="md:mt-4 font-offbittrialbold mt-[-30px] text-[3vw] md:text-[3vw] sm:text-[4vw] md:text-8xl flex gap-4"
 				>
 					<p className="text-custom_white">IEEE Computer Society's</p>
 					<p className="text-custom_red">FLAGSHIP</p>
@@ -403,6 +416,10 @@ export default function Home() {
 				></motion.img>
 
 				<About />
+				<Domain />
+				<Timeline />
+				<Sponsors />
+				<FAQ />
 			</motion.section>
 		</>
 	);

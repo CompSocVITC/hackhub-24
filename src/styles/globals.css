@@ -17,7 +17,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -30,15 +30,19 @@ body {
 		rgb(var(--background-start-rgb));
 }
 
-
 @font-face {
 	font-family: "Open Sans";
-  src: url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap')
+	src: url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 }
 
 @font-face {
 	font-family: "Glitch";
 	src: url("../fonts/glitchside.otf");
+}
+
+@font-face {
+	font-family: "Steve";
+	src: url("../fonts/Steve.ttf");
 }
 
 @font-face {
@@ -62,7 +66,7 @@ body {
 }
 
 .gradient-text {
-	background-image: linear-gradient(to right, #cb356e, #897bec);
+	background-image: linear-gradient(to right, #c94f7d, #9084e6);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;

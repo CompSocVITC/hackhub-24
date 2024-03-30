@@ -64,8 +64,16 @@ export default function FAQ(): JSX.Element {
 					</section>
 					<section className={`${spaceGrotesk.className} ml-[-1rem]`}>
 						{faqs.map((faq, index) => (
-							<section
-								className=" border-custom_red border-b-2 backdrop-blur-2xl rounded-3xl p-4 mb-4"
+
+							<motion.section
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{
+									duration: 3,
+									delay: 0.3,
+									ease: "easeInOut",
+								}}
+								className=" border-custom_red border-b-2 backdrop-blur-2xl rounded-3xl p-4 mb-4 shadow-lg shadow-custom_darkblue"
 								key={index}
 							>
 								<section
@@ -79,13 +87,23 @@ export default function FAQ(): JSX.Element {
 									/>
 								</section>
 								{selectedTopic === index && (
-									<section
-										className={`${spaceMono.className} font-extralight text-[1.2rem] pt-4 pb-24 pr-24 `}
+
+									<motion.section
+										initial={{ opacity: 0 }}
+										animate={{
+											opacity: 1,
+										}}
+										transition={{
+											duration: 2,
+											delay: 0,
+											ease: "easeInOut",
+										}}
+										className={` font-extralight text-[1.2rem] pt-4 pb-24 pr-24 `}
 									>
 										<p>{faq.description}</p>
-									</section>
+									</motion.section>
 								)}
-							</section>
+							</motion.section>
 						))}
 					</section>
 				</div>

@@ -13,6 +13,20 @@ const spaceMono = Space_Mono({
 });
 
 export default function Timeline(): JSX.Element {
+	const times = [
+		{
+			topic: "26th April 2024",
+			description: "Registration starts",
+		},
+		{
+			topic: "26th April 2024",
+			description: "Registration starts",
+		},
+		{
+			topic: "26th April 2024",
+			description: "Registration starts",
+		},
+	];
 	return (
 		<>
 			<motion.section
@@ -34,16 +48,41 @@ export default function Timeline(): JSX.Element {
 					className="absolute left-[3rem] top-[-4rem] w-[22rem] z-0"
 				></motion.img>
 
-				<div className="p-4 flex flex-col w-[80%] mx-auto items-center justify-center z-10">
+				<div className="p-4 flex w-screen flex-col items-center justify-center z-10">
 					<section className={`flex py-4 ${spaceGrotesk.className}`}>
-						<section className="text-custom_white">
-							Timeline of the Hackathon
+						<section className="text-custom_white text-start w-screen ml-[3em]">
+							Timeline
 						</section>
 					</section>
 					<section
-						className={`text-[1.2rem] font-normal self-start ${spaceMono.className}`}
+						className={`text-[1.2rem] font-normal ${spaceMono.className}`}
 					>
-						ADD Timeline
+						<section className="">
+							{times.map((time, index) => (
+								<section className={`justify-center w-screen rounded-lg p-12`}>
+									<section
+										className={`${
+											index % 2 == 0
+												? "ml-[25em] mr-[4em] border-custom_red"
+												: "ml-[4em] mr-[25em] border-custom_lightblue"
+										} border rounded-lg p-12 backdrop-brightness-125 backdrop-blur-lg shadow-2xl shadow-custom_darkblue`}
+									>
+										<section
+											className={`${
+												index % 2 == 0
+													? "text-custom_red"
+													: "text-custom_lightblue"
+											} text-[3rem] font-normal self-start"`}
+										>
+											{time.topic}
+										</section>
+										<section className="text-[1.5rem] font-normal mt-12 text-end">
+											{time.description}
+										</section>
+									</section>
+								</section>
+							))}
+						</section>
 					</section>
 				</div>
 			</motion.section>

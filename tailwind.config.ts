@@ -17,11 +17,12 @@ const config: Config = {
 				custom_red: "#CF1259",
 			},
 			fontFamily: {
+				steve: ["Steve", "sans-serif"],
 				glitch: ["Glitch", "sans-serif"],
 				offbittrialbold: ["OffBitTrialBold", "sans-serif"],
 				offbittrial: ["OffBitTrial", "sans-serif"],
 				offbittrialdot: ["OffBitTrialDot", "sans-serif"],
-                opensans: ["Open Sans", "sans-serif"]
+				opensans: ["Open Sans", "sans-serif"],
 			},
 			screens: {
 				sm: {

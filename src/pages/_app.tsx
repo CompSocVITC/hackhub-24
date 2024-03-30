@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<section
-				className={`bg-[#03091E] text-[#EAEAEA] ${montserrat.className} scroll-smooth overflow-x-hidden`}
+				className={`bg-[#03091E] text-[#EAEAEA] ${montserrat.className} scroll-smooth overflow-x-hidden overflow-y-hidden`}
 			>
 				<motion.section
 					className="bg-[#03091E] bg-opacity-50 w-full z-40"

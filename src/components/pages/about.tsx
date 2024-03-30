@@ -15,12 +15,14 @@ const spaceMono = Space_Mono({
 export default function About(): JSX.Element {
 	return (
 		<>
-			<div className="w-[70%] ml-24 pb-24 p-12 z-10 backdrop-blur-sm rounded-[3rem]">
-				<section className={`flex py-4 ${spaceGrotesk.className}`}>
+			<div className="lg:w-[70%] sm:w-[95%] md:w-[90%] lg:ml-24 pb-24 p-12 z-10 backdrop-blur-lg rounded-[3rem] border border-custom_red shadow-2xl shadow-custom_darkblue md:self-center sm:self-center">
+				<section
+					className={`flex py-4 ${spaceGrotesk.className} md:text-[70%] sm:text-[50%] sm:justify-center`}
+				>
 					<section className="text-custom_white font-glitch about-shadow mr-8">
 						About
 					</section>
-					<section className="text-custom_purple font-glitch hack-shadow">
+					<section className="text-custom_purple sm:ml-[-20px] font-glitch hack-shadow">
 						Hack
 					</section>
 					<section className="text-custom_red font-glitch hub-shadow">
@@ -29,7 +31,7 @@ export default function About(): JSX.Element {
 				</section>
 
 				<section
-					className={`text-[1.5rem] font-normal font-offbittrial self-start `}
+					className={`text-[1.5rem] font-normal self-start sm:text-center sm:text-[1rem]`}
 				>
 					Welcome to IEEE Computer Society VIT Chennai, where innovation meets
 					impact. This event is a vibrant arena for budding technologists,
