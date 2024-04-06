@@ -68,6 +68,24 @@ export default function Domain(): JSX.Element {
 				<motion.p
 					initial={{ x: "0vw", y: "0vh", rotate: 0 }}
 					animate={{
+						x: ["2vw", "-2vw", "2vw"],
+					}}
+					transition={{
+						x: {
+							duration: 5, // Increase duration for slower movement
+							yoyo: Infinity,
+							ease: "easeInOut",
+							repeat: Infinity, // Changed ease for smoother motion
+						},
+					}}
+					className="font-opensans sm:hidden font-black absolute text-[8rem] w-fit p-4 right-[40rem] bottom-[-10rem] white-border text-custom_red"
+				>
+					◯
+				</motion.p>
+
+				<motion.p
+					initial={{ x: "0vw", y: "0vh", rotate: 0 }}
+					animate={{
 						x: ["-2vw", "2vw", "-2vw"], // Change x values for repeated motion
 						y: ["-2vh", "2vh", "-2vh"], // Adjusted y values for variation
 						rotate: [360, 0],
