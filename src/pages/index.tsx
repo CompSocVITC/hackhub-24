@@ -180,7 +180,7 @@ export default function Home() {
 								repeat: Infinity,
 							},
 						}}
-						className={`${roboto.className} absolute right-[85rem] bottom-[-12rem] text-[12rem] white-border text-custom_lightblue z-0 gradient-border`}
+						className={`${roboto.className} absolute left-[20rem] bottom-[-14rem] text-[12rem] white-border text-custom_lightblue z-0 gradient-border`}
 					>
 						×
 					</motion.p>

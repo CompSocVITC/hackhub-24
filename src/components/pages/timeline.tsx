@@ -48,11 +48,11 @@ export default function Timeline(): JSX.Element {
 					className="absolute left-[3rem] top-[-4rem] w-[22rem] z-0"
 				></motion.img>
 
-				<div className="p-4 flex w-screen flex-col items-center justify-center z-10">
-					<section className={`flex py-4 ${spaceGrotesk.className}`}>
-						<section className="text-custom_white text-start w-screen ml-[3em] sm:text-center sm:ml-0">
-							Timeline
-						</section>
+				<div className="p-4 flex w-full flex-col items-center justify-center z-10">
+					<section
+						className={`${spaceGrotesk.className} text-custom_white w-full text-right mr-[12rem] sm:text-center sm:ml-0`}
+					>
+						Timeline
 					</section>
 					<section
 						className={`text-[1.2rem] font-normal ${spaceMono.className}`}
